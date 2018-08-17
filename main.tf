@@ -16,7 +16,7 @@ resource "aws_db_instance" "main" {
   storage_encrypted          = "${var.storage_encrypted}"
   storage_type               = "${var.storage_type}"
   skip_final_snapshot        = "${var.skip_final_snapshot}"
-  final_snapshot_identifier  = "final-${var.rds_instance_identifier}-${var.env}"
+  final_snapshot_identifier  = "final-${var.identifier}-${var.env}"
   backup_retention_period    = "${var.backup_retention_period}"
   maintenance_window         = "${var.maintenance_window}"
   monitoring_interval        = "${var.monitoring_interval}"
@@ -34,8 +34,8 @@ resource "aws_route53_record" "www" {
   type    = "A"
 
   alias {
-    name                   = "${aws_db_instance.main_rds_instance.address}"
-    zone_id                = "${aws_db_instance.main_rds_instance.hosted_zone_id}"
+    name                   = "${aws_db_instance.main.address}"
+    zone_id                = "${aws_db_instance.main.hosted_zone_id}"
     evaluate_target_health = true
   }
 }
