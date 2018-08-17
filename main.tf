@@ -1,5 +1,5 @@
 resource "aws_db_instance" "main" {
-  identifier                 = "${var.input_identifier}"
+  identifier                 = "${var.identifier}"
   allocated_storage          = "${var.allocated_storage}"
   engine                     = "${var.engine}"
   engine_version             = "${var.engine_version}"
