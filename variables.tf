@@ -65,7 +65,6 @@ variable "skip_final_snapshot" {
 variable "rds_vpc_id" {}
 variable "domain_name" {}
 variable "domain_sub_name" {}
-variable "app_security_group" {}
 variable "db_security_group" {}
 
 variable "backup_retention_period" {
